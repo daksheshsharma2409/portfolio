@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div className="bg-[#6b776b]">
+    <div className="bg-[#6b776b] font-display">
       <Navbar />
       <main className="pt-20">
         <HeroPage />

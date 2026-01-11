@@ -5,11 +5,11 @@ import { Contact, ArrowDownToLine } from "lucide-react";
 const HeroPage = () => {
   return (
     <div className="min-h-screen w-full bg-[#6b776b] flex items-center justify-center flex-col p-6 text-center">
-      <h1 className="text-[#f9f8f1] text-4xl md:text-7xl mb-3 md:mb-5 font-hero font-bold">
+      <h1 className="text-[#f9f8f1] text-3xl md:text-7xl mb-3 md:mb-5 font-hero font-semibold">
         Hi, I'm Dakshesh Sharma
       </h1>
 
-      <h2 className="text-[#e9e8d8] text-3xl md:text-6xl mb-6 font-hero">
+      <h2 className="text-[#e9e8d8] text-2xl md:text-6xl mb-6 font-hero">
         <Typewriter
           options={{
             strings: [
