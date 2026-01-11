@@ -10,10 +10,14 @@ const HeroPage = () => {
       </h1>
 
       <h2 className="text-[#e9e8d8] text-3xl md:text-6xl mb-6 font-hero">
-        {/* Web Developer */}
         <Typewriter
           options={{
-            strings: ["Frontend Developer", "Data Analyst", "AI Enthusiast"],
+            strings: [
+              "Frontend Developer",
+              "Data Analyst",
+              "AI Enthusiast",
+              "Python Developer",
+            ],
             autoStart: true,
             loop: true,
           }}
