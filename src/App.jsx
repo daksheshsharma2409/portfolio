@@ -4,10 +4,11 @@ import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-[#6b776b]">
       <Navbar />
-      <HeroPage />
-      <div className="h-screen w-screen"></div>
+      <main className="pt-20">
+        <HeroPage />
+      </main>
     </div>
   );
 };
