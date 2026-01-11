@@ -5,6 +5,7 @@ const App = () => {
   return (
     <div>
       <HeroPage />
+      <div className="h-screen w-screen"></div>
     </div>
   );
 };
