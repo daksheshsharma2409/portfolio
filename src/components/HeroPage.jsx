@@ -1,8 +1,7 @@
-import React from "react";
 import Typewriter from "typewriter-effect";
-import { Contact, ArrowDownToLine } from "lucide-react";
+import { Contact, ArrowDownToLine, Type } from "lucide-react";
 
-const HeroPage = () => {
+const HeroPage = (props) => {
   return (
     <div className="min-h-screen w-full bg-[#6b776b] flex items-center justify-center flex-col p-6 text-center">
       <h1 className="text-[#f9f8f1] text-3xl md:text-7xl mb-3 md:mb-5 font-hero font-semibold">
@@ -37,8 +36,13 @@ const HeroPage = () => {
           </button>
         </a>
 
-        <a href="#contact" className="w-full md:w-auto">
-          <button className="w-full md:w-auto text-[18px] bg-[#e9e8d8] text-[#828e82] py-3 px-6 flex rounded-2xl cursor-pointer items-center justify-center transition duration-500 border-b-6 ease-in-out border-r-4 hover:border-[#4d574d] hover:bg-[#d7d6c7] hover:text-[#4d574d]">
+        <a className="w-full md:w-auto">
+          <button
+            className="w-full md:w-auto text-[18px] bg-[#e9e8d8] text-[#828e82] py-3 px-6 flex rounded-2xl cursor-pointer items-center justify-center transition duration-500 border-b-6 ease-in-out border-r-4 hover:border-[#4d574d] hover:bg-[#d7d6c7] hover:text-[#4d574d]"
+            onClick={() => {
+              props.scrollToSection(props.contactRef);
+            }}
+          >
             <Contact className="mr-2" size={22} /> Contact Me
           </button>
         </a>
