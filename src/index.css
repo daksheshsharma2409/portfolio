@@ -9,3 +9,8 @@
 body {
   background-color: #f9f8f1;
 }
+
+section,
+div[ref] {
+  scroll-margin-top: 100px;
+}

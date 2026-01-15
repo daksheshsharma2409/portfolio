@@ -14,10 +14,12 @@ const App = () => {
   const contactRef = useRef(null);
 
   const scrollToSection = (elem) => {
-    window.scrollTo({
-      top: elem.current.offsetTop,
-      behavior: "smooth",
-    });
+    if (elem.current) {
+      elem.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
   return (
     <div className="bg-[#f9f8f1] font-display">

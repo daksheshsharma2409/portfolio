@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="bg-[#f9f8f1] w-full min-h-screen">
+    <div className="bg-[#8a978a] w-full min-h-screen">
       <h1>This is contacts page</h1>
     </div>
   );
