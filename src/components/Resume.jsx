@@ -1,98 +1,118 @@
 import { GraduationCap, Cpu, Code2 } from "lucide-react";
+import python from "../assets/images/techstack/python.png";
+import cpp from "../assets/images/techstack/cpp.png";
+import javascript from "../assets/images/techstack/javascript.png";
+import html from "../assets/images/techstack/html.png";
+import css from "../assets/images/techstack/css.png";
+import tailwindLogo from "../assets/images/techstack/tailwindLogo.svg";
+import reactLogo from "../assets/images/techstack/reactLogo.png";
+import vite from "../assets/images/techstack/vite.png";
+import bootstrap from "../assets/images/techstack/bootstrap.png";
+import django from "../assets/images/techstack/django.png";
+import flask from "../assets/images/techstack/flask.png";
+import opencv from "../assets/images/techstack/opencv.png";
+import pandas from "../assets/images/techstack/pandas.png";
+import numpy from "../assets/images/techstack/numpy.png";
+import matplotlib from "../assets/images/techstack/matplotlib.png";
+import tensorflow from "../assets/images/techstack/tensorflow.png";
+import git from "../assets/images/techstack/git.png";
+import github from "../assets/images/techstack/github.svg";
+import linux from "../assets/images/techstack/linux.png";
+import vercel from "../assets/images/techstack/vercel.svg";
 
 const Resume = () => {
   const techLanguages = [
     {
       name: "Python",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png",
+      img: `${python}`,
     },
     {
       name: "C++",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/330px-ISO_C%2B%2B_Logo.svg.png",
+      img: `${cpp}`,
     },
     {
       name: "Javascript",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/JavaScript_shield_logo_%28no_text%29.svg/1280px-JavaScript_shield_logo_%28no_text%29.svg.png?20250422125247",
+      img: `${javascript}`,
     },
   ];
   const frontendStack = [
     {
       name: "HTML",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Devicon-html5-plain.svg/1280px-Devicon-html5-plain.svg.png?20190106214352",
+      img: `${html}`,
     },
     {
       name: "CSS",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Official_CSS_Logo.svg/250px-Official_CSS_Logo.svg.png",
+      img: `${css}`,
     },
     {
       name: "Javascript",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/JavaScript_shield_logo_%28no_text%29.svg/1280px-JavaScript_shield_logo_%28no_text%29.svg.png?20250422125247",
+      img: `${javascript}`,
     },
     {
       name: "Tailwind",
-      img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+      img: `${tailwindLogo}`,
     },
     {
       name: "React",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png",
+      img: `${reactLogo}`,
     },
     {
       name: "Vite",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/960px-Vitejs-logo.svg.png?20220412224743",
+      img: `${vite}`,
     },
     {
       name: "Bootstrap",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1280px-Bootstrap_logo.svg.png?20210507000024",
+      img: `${bootstrap}`,
     },
   ];
   const backendStack = [
     {
       name: "Django",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Django_logo.svg/960px-Django_logo.svg.png?20101010121142",
+      img: `${django}`,
     },
     {
       name: "Flask",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/640px-Flask_logo.svg.png",
+      img: `${flask}`,
     },
   ];
   const aimlStack = [
     {
       name: "Open Cv",
-      img: "https://raw.githubusercontent.com/wiki/opencv/opencv/logo/OpenCV_logo_no_text.png",
+      img: `${opencv}`,
     },
     {
       name: "Pandas",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Pandas_mark.svg/960px-Pandas_mark.svg.png?20200210000431",
+      img: `${pandas}`,
     },
     {
       name: "Numpy",
-      img: "https://images.seeklogo.com/logo-png/39/2/numpy-logo-png_seeklogo-398690.png",
+      img: `${numpy}`,
     },
     {
       name: "Matplotlib",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Created_with_Matplotlib-logo.svg/250px-Created_with_Matplotlib-logo.svg.png",
+      img: `${matplotlib}`,
     },
     {
       name: "TensorFlow",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/1200px-Tensorflow_logo.svg.png",
+      img: `${tensorflow}`,
     },
   ];
   const toolsStack = [
     {
       name: "Git",
-      img: "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
+      img: `${git}`,
     },
     {
       name: "Github",
-      img: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
+      img: `${github}`,
     },
     {
       name: "Linux",
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/1920px-Tux.svg.png",
+      img: `${linux}`,
     },
     {
       name: "Vercel",
-      img: "https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg/",
+      img: `${vercel}`,
     },
   ];
   return (
