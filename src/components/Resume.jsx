@@ -1,4 +1,4 @@
-import { GraduationCap, Cpu, Code2 } from "lucide-react";
+import { GraduationCap, Cpu, Code2, Briefcase } from "lucide-react";
 import python from "../assets/images/techstack/python.png";
 import cpp from "../assets/images/techstack/cpp.png";
 import javascript from "../assets/images/techstack/javascript.png";
@@ -20,333 +20,189 @@ import github from "../assets/images/techstack/github.svg";
 import linux from "../assets/images/techstack/linux.png";
 import vercel from "../assets/images/techstack/vercel.svg";
 
+const techCategories = [
+  {
+    label: "Languages",
+    techs: [
+      { name: "Python", img: python },
+      { name: "C++", img: cpp },
+      { name: "JavaScript", img: javascript },
+    ],
+  },
+  {
+    label: "Frontend",
+    techs: [
+      { name: "HTML", img: html },
+      { name: "CSS", img: css },
+      { name: "React", img: reactLogo },
+      { name: "Tailwind", img: tailwindLogo },
+      { name: "Vite", img: vite },
+      { name: "Bootstrap", img: bootstrap },
+    ],
+  },
+  {
+    label: "Backend",
+    techs: [
+      { name: "Django", img: django },
+      { name: "Flask", img: flask },
+    ],
+  },
+  {
+    label: "AI / ML & Data",
+    techs: [
+      { name: "OpenCV", img: opencv },
+      { name: "Pandas", img: pandas },
+      { name: "NumPy", img: numpy },
+      { name: "Matplotlib", img: matplotlib },
+      { name: "TensorFlow", img: tensorflow },
+    ],
+  },
+  {
+    label: "Tools",
+    techs: [
+      { name: "Git", img: git },
+      { name: "GitHub", img: github },
+      { name: "Linux", img: linux },
+      { name: "Vercel", img: vercel },
+    ],
+  },
+];
+
+const TechCard = ({ name, img }) => (
+  <div className="group bg-[#1a2235] border border-[#2a3550] rounded-2xl p-5 flex flex-col items-center justify-center gap-3 cursor-default transition-all duration-300 hover:border-[#f59e0b40] hover:bg-[#f59e0b06] hover:-translate-y-1">
+    <div className="w-12 h-12 flex items-center justify-center">
+      <img
+        src={img}
+        alt={name}
+        className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+      />
+    </div>
+    <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#4b5563] group-hover:text-[#f59e0b] transition-colors">
+      {name}
+    </span>
+  </div>
+);
+
+const TimelineItem = ({ title, time, detail, dot }) => (
+  <div className="relative pl-8">
+    <div className="absolute -left-[5px] top-1.5 w-3 h-3 rounded-full ring-4 ring-[#111827]" style={{ background: dot || "#f59e0b" }} />
+    <h4 className="text-[#f3f4f6] font-semibold text-base">{title}</h4>
+    <p className="text-[#f59e0b] text-[10px] font-bold uppercase tracking-[0.15em] mt-1">{time}</p>
+    <p className="text-[#64748b] text-sm leading-relaxed mt-2 italic border-l border-[#2a3550] pl-3">{detail}</p>
+  </div>
+);
+
 const Resume = () => {
-  const techLanguages = [
-    {
-      name: "Python",
-      img: `${python}`,
-    },
-    {
-      name: "C++",
-      img: `${cpp}`,
-    },
-    {
-      name: "Javascript",
-      img: `${javascript}`,
-    },
-  ];
-  const frontendStack = [
-    {
-      name: "HTML",
-      img: `${html}`,
-    },
-    {
-      name: "CSS",
-      img: `${css}`,
-    },
-    {
-      name: "Javascript",
-      img: `${javascript}`,
-    },
-    {
-      name: "Tailwind",
-      img: `${tailwindLogo}`,
-    },
-    {
-      name: "React",
-      img: `${reactLogo}`,
-    },
-    {
-      name: "Vite",
-      img: `${vite}`,
-    },
-    {
-      name: "Bootstrap",
-      img: `${bootstrap}`,
-    },
-  ];
-  const backendStack = [
-    {
-      name: "Django",
-      img: `${django}`,
-    },
-    {
-      name: "Flask",
-      img: `${flask}`,
-    },
-  ];
-  const aimlStack = [
-    {
-      name: "Open Cv",
-      img: `${opencv}`,
-    },
-    {
-      name: "Pandas",
-      img: `${pandas}`,
-    },
-    {
-      name: "Numpy",
-      img: `${numpy}`,
-    },
-    {
-      name: "Matplotlib",
-      img: `${matplotlib}`,
-    },
-    {
-      name: "TensorFlow",
-      img: `${tensorflow}`,
-    },
-  ];
-  const toolsStack = [
-    {
-      name: "Git",
-      img: `${git}`,
-    },
-    {
-      name: "Github",
-      img: `${github}`,
-    },
-    {
-      name: "Linux",
-      img: `${linux}`,
-    },
-    {
-      name: "Vercel",
-      img: `${vercel}`,
-    },
-  ];
   return (
     <section
       id="resume"
-      className="bg-[#f2f1eb] w-full min-h-screen py-24 px-6 md:px-12 lg:px-24 flex items-start justify-center"
+      className="w-full min-h-screen py-28 px-6 md:px-12 lg:px-24 flex items-start justify-center"
+      style={{ background: "linear-gradient(180deg, #0a0d1a 0%, #080b16 100%)" }}
     >
-      <div className="max-w-7xl w-full flex flex-col-reverse lg:flex-row gap-10 items-start mt-10">
-        <div className="bg-[#e9e8d8] w-full lg:w-2/3 border-4 border-[#818e82] rounded-3xl p-8 md:p-12 flex flex-col hover:border-[#4d574d] transition-all duration-500 shadow-md">
-          <div className="space-y-16">
-            <div>
-              <h3 className="text-2xl font-bold text-[#3f4f3f] mb-8 flex items-center gap-2">
-                <Cpu size={24} className="text-[#818e82]" /> Technical Arsenal
-              </h3>
-              <h4 className="text-[#2d2d2b] leading-relaxed text-[21px] mb-6">
-                Languages
-              </h4>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                {techLanguages.map((tech) => (
-                  <div
-                    key={tech.name}
-                    className="group relative bg-[#f2f1eb]/50 border-2 border-[#818e82]/20 rounded-[2rem] p-6 flex flex-col items-center justify-center hover:bg-[#3f4f3f] transition-all duration-500 shadow-sm"
-                  >
-                    <div className="w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                      <img
-                        src={tech.img}
-                        alt={tech.name}
-                        className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all"
-                      />
-                    </div>
-                    <span className="font-bold text-xs uppercase tracking-[0.2em] mt-4 text-[#6b776b] group-hover:text-[#e9e8d8]">
-                      {tech.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <h4 className="text-[#2d2d2b] leading-relaxed text-[21px] mb-6 mt-6">
-                Frontend Development
-              </h4>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                {frontendStack.map((tech) => (
-                  <div
-                    key={tech.name}
-                    className="group relative bg-[#f2f1eb]/50 border-2 border-[#818e82]/20 rounded-[2rem] p-6 flex flex-col items-center justify-center hover:bg-[#3f4f3f] transition-all duration-500 shadow-sm"
-                  >
-                    <div className="w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                      <img
-                        src={tech.img}
-                        alt={tech.name}
-                        className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all"
-                      />
-                    </div>
-                    <span className="font-bold text-xs uppercase tracking-[0.2em] mt-4 text-[#6b776b] group-hover:text-[#e9e8d8]">
-                      {tech.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <h4 className="text-[#2d2d2b] leading-relaxed text-[21px] mb-6 mt-6">
-                Backend Development
-              </h4>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                {backendStack.map((tech) => (
-                  <div
-                    key={tech.name}
-                    className="group relative bg-[#f2f1eb]/50 border-2 border-[#818e82]/20 rounded-[2rem] p-6 flex flex-col items-center justify-center hover:bg-[#3f4f3f] transition-all duration-500 shadow-sm"
-                  >
-                    <div className="w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                      <img
-                        src={tech.img}
-                        alt={tech.name}
-                        className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all"
-                      />
-                    </div>
-                    <span className="font-bold text-xs uppercase tracking-[0.2em] mt-4 text-[#6b776b] group-hover:text-[#e9e8d8]">
-                      {tech.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <h4 className="text-[#2d2d2b] leading-relaxed text-[21px] mb-6 mt-6">
-                AI/ML & Data Science
-              </h4>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                {aimlStack.map((tech) => (
-                  <div
-                    key={tech.name}
-                    className="group relative bg-[#f2f1eb]/50 border-2 border-[#818e82]/20 rounded-[2rem] p-6 flex flex-col items-center justify-center hover:bg-[#3f4f3f] transition-all duration-500 shadow-sm"
-                  >
-                    <div className="w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                      <img
-                        src={tech.img}
-                        alt={tech.name}
-                        className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all"
-                      />
-                    </div>
-                    <span className="font-bold text-xs uppercase tracking-[0.2em] mt-4 text-[#6b776b] group-hover:text-[#e9e8d8]">
-                      {tech.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <h4 className="text-[#2d2d2b] leading-relaxed text-[21px] mb-6 mt-6">
-                Tools & Technologies
-              </h4>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                {toolsStack.map((tech) => (
-                  <div
-                    key={tech.name}
-                    className="group relative bg-[#f2f1eb]/50 border-2 border-[#818e82]/20 rounded-[2rem] p-6 flex flex-col items-center justify-center hover:bg-[#3f4f3f] transition-all duration-500 shadow-sm"
-                  >
-                    <div className="w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                      <img
-                        src={tech.img}
-                        alt={tech.name}
-                        className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all"
-                      />
-                    </div>
-                    <span className="font-bold text-xs uppercase tracking-[0.2em] mt-4 text-[#6b776b] group-hover:text-[#e9e8d8]">
-                      {tech.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
+      <div className="max-w-7xl w-full flex flex-col-reverse lg:flex-row gap-8 items-start">
+        {/* Main Content */}
+        <div className="card w-full lg:w-2/3 p-8 md:p-12 flex flex-col gap-14">
+          {/* Tech Stack */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <Cpu size={20} className="text-[#f59e0b]" />
+              <h3 className="text-[#f3f4f6] text-xl font-bold">Technical Arsenal</h3>
             </div>
             <div className="space-y-8">
-              <h3 className="text-2xl font-bold text-[#3f4f3f] flex items-center gap-2">
-                <Code2 size={24} className="text-[#818e82]" /> Work History
-              </h3>
-              <div className="border-l-4 border-[#818e82] pl-8 space-y-12">
-                <div className="relative">
-                  <div className="absolute -left-[38px] top-1.5 w-4 h-4 bg-[#818e82] rounded-full ring-4 ring-[#e9e8d8]" />
-                  <h4 className="text-xl font-bold text-[#2d2d2b]">
-                    Independent Developer
-                  </h4>
-                  <p className="text-[#818e82] font-black text-xs uppercase tracking-widest mt-1">
-                    2018 — PRESENT
-                  </p>
-                  <p className="mt-4 text-[#4a4a48] leading-relaxed italic border-l-2 border-[#818e82]/20 pl-4">
-                    Architecting end-to-end Python solutions, including custom
-                    AI voice engines and real-time computer vision systems using
-                    OpenCV.
-                  </p>
+              {techCategories.map(({ label, techs }) => (
+                <div key={label}>
+                  <p className="text-[#64748b] text-xs font-bold uppercase tracking-[0.2em] mb-4">{label}</p>
+                  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
+                    {techs.map((tech) => <TechCard key={tech.name} {...tech} />)}
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
+          </div>
 
-            <div className="space-y-8 pb-4">
-              <h3 className="text-2xl font-bold text-[#3f4f3f] flex items-center gap-2">
-                <GraduationCap size={24} className="text-[#818e82]" /> Academic
-                Journey
-              </h3>
-              <div className="border-l-4 border-[#818e82] pl-8 space-y-12">
-                <div className="relative">
-                  <div className="absolute -left-[38px] top-1.5 w-4 h-4 bg-[#818e82] rounded-full ring-4 ring-[#e9e8d8]" />
-                  <h4 className="text-xl font-bold text-[#2d2d2b]">
-                    B.Tech - Computer Science and Artificial Intelligence
-                  </h4>
-                  <p className="text-[#818e82] font-black text-xs uppercase tracking-widest mt-1">
-                    2025 - 2029 (Pursuing)
-                  </p>
-                  <p className="mt-4 text-[#4a4a48] leading-relaxed italic border-l-2 border-[#818e82]/20 pl-4">
-                    Newton School of Technology (Rishihood University), Sonipat,
-                    Haryana
-                  </p>
-                </div>
-              </div>
-              <div className="border-l-4 border-[#818e82] pl-8 space-y-12">
-                <div className="relative">
-                  <div className="absolute -left-[38px] top-1.5 w-4 h-4 bg-[#818e82] rounded-full ring-4 ring-[#e9e8d8]" />
-                  <h4 className="text-xl font-bold text-[#2d2d2b]">
-                    Class 12th CBSE
-                  </h4>
-                  <p className="text-[#818e82] font-black text-xs uppercase tracking-widest mt-1">
-                    2024 - 2025
-                  </p>
-                  <p className="mt-4 text-[#4a4a48] leading-relaxed italic border-l-2 border-[#818e82]/20 pl-4">
-                    D.C. Model Sr. Sec. School, Firozpur Cantt, Punjab <br />
-                    Result : 86.8%
-                  </p>
-                </div>
-              </div>
-              <div className="border-l-4 border-[#818e82] pl-8 space-y-12">
-                <div className="relative">
-                  <div className="absolute -left-[38px] top-1.5 w-4 h-4 bg-[#818e82] rounded-full ring-4 ring-[#e9e8d8]" />
-                  <h4 className="text-xl font-bold text-[#2d2d2b]">
-                    Class 10th CBSE
-                  </h4>
-                  <p className="text-[#818e82] font-black text-xs uppercase tracking-widest mt-1">
-                    2022 - 2023
-                  </p>
-                  <p className="mt-4 text-[#4a4a48] leading-relaxed italic border-l-2 border-[#818e82]/20 pl-4">
-                    Dass and Brown World School, Firozpur, Punjab <br />
-                    Result : 94.8%
-                  </p>
-                </div>
-              </div>
+          {/* Work History */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <Briefcase size={20} className="text-[#f59e0b]" />
+              <h3 className="text-[#f3f4f6] text-xl font-bold">Work History</h3>
+            </div>
+            <div className="border-l border-[#2a3550] pl-6 space-y-10">
+              <TimelineItem
+                title="Independent Developer"
+                time="2018 — Present"
+                detail="Architecting end-to-end Python solutions, including custom AI voice engines and real-time computer vision systems using OpenCV. Building full-stack web platforms with React and Django."
+              />
+            </div>
+          </div>
+
+          {/* Academic Journey */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <GraduationCap size={20} className="text-[#f59e0b]" />
+              <h3 className="text-[#f3f4f6] text-xl font-bold">Academic Journey</h3>
+            </div>
+            <div className="border-l border-[#2a3550] pl-6 space-y-10">
+              <TimelineItem
+                title="B.Tech — Computer Science & Artificial Intelligence"
+                time="2025 – 2029 (Pursuing)"
+                detail="Newton School of Technology (Rishihood University), Sonipat, Haryana"
+              />
+              <TimelineItem
+                title="Class 12th — CBSE"
+                time="2024 – 2025"
+                detail="D.C. Model Sr. Sec. School, Firozpur Cantt, Punjab · Result: 86.8%"
+              />
+              <TimelineItem
+                title="Class 10th — CBSE"
+                time="2022 – 2023"
+                detail="Dass and Brown World School, Firozpur, Punjab · Result: 94.8%"
+              />
             </div>
           </div>
         </div>
 
-        <div className="lg:sticky lg:top-32 bg-[#e9e8d8] w-full lg:w-1/3 border-4 border-[#818e82] rounded-3xl p-8 flex flex-col hover:border-[#4d574d] transition-all duration-500 shadow-md">
-          <h2 className="text-[#3f4f3f] text-4xl font-bold flex items-center gap-2 mb-8 border-b-4 border-[#818e82] w-fit">
-            Resume
-          </h2>
-          <p className="text-[#4a4a48] leading-relaxed text-lg mb-12">
-            A developer's journey through AI, automation, and full-stack
-            engineering. I specialize in turning complex data problems into
-            clean, interactive digital solutions.
+        {/* Sticky Sidebar */}
+        <div className="card lg:sticky lg:top-32 w-full lg:w-1/3 p-8 flex flex-col gap-8">
+          <div>
+            <span className="section-number">02. Resume</span>
+            <h2 className="font-hero text-4xl text-[#f3f4f6] leading-tight">
+              My<br />
+              <span style={{ background: "linear-gradient(135deg, #f59e0b, #fbbf24)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                Journey
+              </span>
+            </h2>
+          </div>
+
+          <p className="text-[#64748b] leading-relaxed text-sm">
+            A developer&apos;s path through AI, automation, and full-stack engineering. I turn complex data problems into clean, interactive digital solutions.
           </p>
 
-          <div className="space-y-6">
-            <div className="space-y-3">
-              <p className="text-[14px] font-black text-[#818e82] uppercase tracking-widest ml-1">
-                Current Focus
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "Data Structures and Algorithms",
-                  "Full-Stack",
-                  "Optimization",
-                  "Web Scraping",
-                  "Design",
-                ].map((pith) => (
-                  <span
-                    key={pith}
-                    className="px-3 py-1 bg-[#3f4f3f] text-[#e9e8d8] rounded-lg text-[14px] font-bold"
-                  >
-                    {pith}
-                  </span>
-                ))}
-              </div>
+          <div>
+            <p className="text-[10px] font-bold text-[#64748b] uppercase tracking-[0.2em] mb-3">Current Focus</p>
+            <div className="flex flex-wrap gap-2">
+              {[
+                "DSA",
+                "Full-Stack",
+                "Optimization",
+                "Web Scraping",
+                "UI/UX Design",
+                "Machine Learning",
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  className="tech-pill"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
+
+          <a href="/resume.pdf" target="_blank" rel="noreferrer" className="mt-auto">
+            <button className="btn-primary w-full justify-center">
+              Download Full CV
+            </button>
+          </a>
         </div>
       </div>
     </section>

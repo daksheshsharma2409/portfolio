@@ -2,130 +2,137 @@ import React from "react";
 import portrait from "../assets/images/portrait.png";
 import leetcode from "../assets/images/leetcode.png";
 import codeforces from "../assets/images/codeforces.png";
-import { Mail, Instagram } from "lucide-react";
+import { Mail, Instagram, ExternalLink } from "lucide-react";
+
+const socials = [
+  {
+    href: "mailto:daksheshsharma2007@gmail.com",
+    icon: <Mail size={17} />,
+    label: "Email",
+  },
+  {
+    href: "https://codeforces.com/profile/daksheshsharma2007",
+    icon: <img src={codeforces} className="w-[17px] h-[17px] object-contain" alt="Codeforces" />,
+    label: "Codeforces",
+    external: true,
+  },
+  {
+    href: "https://leetcode.com/u/daksheshsharma2007/",
+    icon: <img src={leetcode} className="w-[17px] h-[17px] object-contain" alt="Leetcode" />,
+    label: "LeetCode",
+    external: true,
+  },
+  {
+    href: "https://www.instagram.com/_dakshesh_sharma/",
+    icon: <Instagram size={17} />,
+    label: "Instagram",
+    external: true,
+  },
+];
+
+const stats = [
+  { label: "Specialization", value: "Python & AI" },
+  { label: "Status", value: "Undergraduate" },
+  { label: "University", value: "Rishihood (NST)" },
+];
 
 const About = () => {
   return (
-    <section className="bg-[#f2f1eb] w-full min-h-screen py-20 px-6 md:px-12 lg:px-24 flex items-center justify-center">
-      <div className="max-w-7xl w-full flex flex-col lg:flex-row gap-10 items-stretch mt-10">
-        <div className="bg-[#e9e8d8] w-full lg:w-1/3 border-4 border-[#818e82] rounded-3xl p-8 flex flex-col items-center hover:border-[#4d574d] transition-all duration-500 shadow-md">
-          <div className="relative group">
+    <section
+      className="w-full min-h-screen py-28 px-6 md:px-12 lg:px-24 flex items-center justify-center"
+      style={{ background: "#0a0d1a" }}
+    >
+      <div className="max-w-7xl w-full flex flex-col lg:flex-row gap-8 items-stretch">
+        {/* Left: Profile Card */}
+        <div className="card w-full lg:w-[320px] lg:flex-shrink-0 p-8 flex flex-col items-center">
+          {/* Avatar */}
+          <div className="relative mb-6">
+            <div
+              className="absolute inset-0 rounded-full blur-xl opacity-40"
+              style={{ background: "radial-gradient(circle, #f59e0b, transparent)" }}
+            />
             <img
               src={portrait}
               alt="portrait"
-              className="rounded-full border-4 border-[#8f9d90] h-48 w-48 object-cover group-hover:border-[#677567] transition-all duration-500 shadow-inner"
+              className="relative rounded-full h-36 w-36 object-cover border-2 border-[#f59e0b40]"
             />
           </div>
 
-          <h1 className="text-[#2d2d2b] text-3xl font-bold mt-6 text-center font-hero">
+          <h2 className="font-hero text-2xl text-[#f3f4f6] text-center mb-1">
             Dakshesh Sharma
-          </h1>
-          <p className="text-center mt-2 text-[#6b776b] font-medium text-lg">
-            Python & Web Developer
+          </h2>
+          <p className="text-[#f59e0b] text-sm font-medium tracking-wide mb-8">
+            Python &amp; Web Developer
           </p>
 
-          <div className="w-full flex flex-col mt-8 gap-4">
-            <a
-              href="mailto:daksheshsharma2007@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-3 border-2 border-[#818e82]/30 w-full px-4 py-3 rounded-xl hover:bg-[#6b776b] hover:text-[#f9f8f1] transition-all duration-300 group"
-            >
-              <Mail
-                size={20}
-                className="text-[#4d574d] group-hover:text-[#f9f8f1]"
-              />
-              <span className="text-sm font-medium truncate">Email Me</span>
-            </a>
-
-            <a
-              href="https://codeforces.com/profile/daksheshsharma2007"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-3 border-2 border-[#818e82]/30 w-full px-4 py-3 rounded-xl hover:bg-[#6b776b] hover:text-[#f9f8f1] transition-all duration-300 group"
-            >
-              <img src={codeforces} className="w-5 h-5" alt="Codeforces" />
-              <span className="text-sm font-medium truncate">Codeforces</span>
-            </a>
-
-            <a
-              href="https://leetcode.com/u/daksheshsharma2007/"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-3 border-2 border-[#818e82]/30 w-full px-4 py-3 rounded-xl hover:bg-[#6b776b] hover:text-[#f9f8f1] transition-all duration-300 group"
-            >
-              <img src={leetcode} className="w-5 h-5" alt="Leetcode" />
-              <span className="text-sm font-medium truncate">Leetcode</span>
-            </a>
-
-            <a
-              href="https://www.instagram.com/_dakshesh_sharma/"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-3 border-2 border-[#818e82]/30 w-full px-4 py-3 rounded-xl hover:bg-[#6b776b] hover:text-[#f9f8f1] transition-all duration-300 group"
-            >
-              <Instagram
-                size={20}
-                className="text-[#4d574d] group-hover:text-[#f9f8f1]"
-              />
-              <span className="text-sm font-medium truncate">Instagram</span>
-            </a>
+          <div className="w-full flex flex-col gap-3">
+            {socials.map(({ href, icon, label, external }) => (
+              <a
+                key={label}
+                href={href}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noreferrer" : undefined}
+                className="flex items-center gap-3 text-[#94a3b8] text-sm font-medium px-4 py-3 rounded-xl border border-[#2a3550] transition-all duration-200 hover:text-[#f59e0b] hover:border-[#f59e0b40] hover:bg-[#f59e0b08] group"
+              >
+                <span className="text-[#64748b] group-hover:text-[#f59e0b] transition-colors">
+                  {icon}
+                </span>
+                {label}
+                <ExternalLink
+                  size={11}
+                  className="ml-auto opacity-0 group-hover:opacity-60 transition-opacity"
+                />
+              </a>
+            ))}
           </div>
         </div>
 
-        <div className="bg-[#e9e8d8] w-full lg:w-2/3 border-4 border-[#818e82] rounded-3xl p-8 md:p-12 flex flex-col hover:border-[#4d574d] transition-all duration-500 shadow-md">
-          <h1 className="text-4xl md:text-5xl font-bold mb-8 text-[#2d2d2b] border-b-4 border-[#818e82] w-fit pb-2">
-            About Me
-          </h1>
+        {/* Right: About Content */}
+        <div className="card flex-1 p-8 md:p-12 flex flex-col">
+          <span className="section-number">01. About</span>
+          <h2 className="section-title mb-8">About Me</h2>
 
-          <div className="space-y-6 text-lg md:text-xl text-[#4a4a48] leading-relaxed">
+          <div className="space-y-5 text-[#94a3b8] text-base md:text-lg leading-relaxed flex-1">
             <p>
-              I am a developer driven by the challenge of building across the
-              full technical stack. Currently pursuing my{" "}
-              <span className="font-bold text-[#3f4f3f]">
-                B.Tech in CS & AI
-              </span>
-              , I focus on creating seamless digital experiences—from
-              architecting fast, responsive web applications to engineering
-              data-driven backend solutions.
+              I&apos;m a developer driven by the challenge of building across
+              the full technical stack. Currently pursuing my{" "}
+              <span className="text-[#f3f4f6] font-semibold">
+                B.Tech in CS &amp; AI
+              </span>{" "}
+              at Newton School of Technology, I focus on creating seamless
+              digital experiences — from architecting fast, responsive web
+              applications to engineering data-driven backend solutions.
             </p>
             <p>
               I leverage a broad tech stack to build tools that are functional
               and impactful. I specialize in{" "}
-              <span className="font-bold text-[#3f4f3f]">Data Science</span>,
-              utilizing the Python ecosystem to transform raw data into clear,
-              actionable insights.
+              <span className="text-[#f59e0b] font-semibold">Data Science</span>
+              , utilizing the Python ecosystem to transform raw data into clear,
+              actionable insights. Competitive programming keeps my
+              problem-solving sharp.
+            </p>
+            <p>
+              When I&apos;m not coding, I&apos;m exploring new AI research,
+              contributing to open-source projects, or grinding LeetCode and
+              Codeforces problems.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-auto pt-10">
-            <div className="p-4 border-2 border-[#818e82]/50 rounded-2xl bg-[#f2f1eb]/50 hover:bg-[#f2f1eb] transition-colors">
-              <p className="text-[#8c8c88] text-xs uppercase tracking-wider font-bold mb-1">
-                Specialization
-              </p>
-              <p className="text-[#4a4a48] text-sm md:text-base font-semibold leading-tight">
-                Python Development
-              </p>
-            </div>
-
-            <div className="p-4 border-2 border-[#818e82]/50 rounded-2xl bg-[#f2f1eb]/50 hover:bg-[#f2f1eb] transition-colors">
-              <p className="text-[#8c8c88] text-xs uppercase tracking-wider font-bold mb-1">
-                Experience
-              </p>
-              <p className="text-[#4a4a48] text-sm md:text-base font-semibold leading-tight">
-                Undergraduate
-              </p>
-            </div>
-
-            <div className="p-4 border-2 border-[#818e82]/50 rounded-2xl bg-[#f2f1eb]/50 hover:bg-[#f2f1eb] transition-colors sm:col-span-2 md:col-span-1">
-              <p className="text-[#8c8c88] text-xs uppercase tracking-wider font-bold mb-1">
-                Education
-              </p>
-              <p className="text-[#4a4a48] text-sm md:text-base font-semibold leading-tight">
-                Rishihood University
-                <br /> (Newton School of Technology)
-              </p>
-            </div>
+          {/* Stat Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
+            {stats.map(({ label, value }) => (
+              <div
+                key={label}
+                className="bg-[#1a2235] border border-[#2a3550] rounded-xl p-4 transition-colors hover:border-[#f59e0b40]"
+              >
+                <p className="text-[#64748b] text-[10px] uppercase tracking-[0.2em] font-semibold mb-1.5">
+                  {label}
+                </p>
+                <p className="text-[#f3f4f6] text-sm font-semibold leading-tight">
+                  {value}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

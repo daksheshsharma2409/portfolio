@@ -1,16 +1,175 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-hero: "Permanent Marker", cursive;
-  --font-display: "Barlow Condensed", sans-serif;
+  --font-hero: "DM Serif Display", serif;
+  --font-display: "Inter", sans-serif;
+
+  --color-bg-base: #0a0d1a;
+  --color-bg-card: #111827;
+  --color-bg-subtle: #1a2235;
+  --color-border: #2a3550;
+  --color-accent: #f59e0b;
+  --color-accent-soft: #fef3c7;
+  --color-text-primary: #f3f4f6;
+  --color-text-secondary: #94a3b8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #f9f8f1;
+  background-color: #0a0d1a;
+  color: #f3f4f6;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0d1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a3550;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
 }
 
 section,
 div[ref] {
   scroll-margin-top: 100px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.section-number {
+  font-family: "DM Serif Display", serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: #f59e0b;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.section-title {
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  color: #f3f4f6;
+}
+
+.card {
+  background: #111827;
+  border: 1px solid #2a3550;
+  border-radius: 1.25rem;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  border-color: #f59e0b40;
+  box-shadow: 0 0 32px #f59e0b14;
+}
+
+.btn-primary {
+  background: #f59e0b;
+  color: #0a0d1a;
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  font-size: 1rem;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #fbbf24;
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #f3f4f6;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.75rem;
+  border: 1.5px solid #2a3550;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  font-size: 1rem;
+}
+
+.btn-ghost:hover {
+  border-color: #f59e0b;
+  background: #f59e0b12;
+  transform: translateY(-2px);
+}
+
+.tech-pill {
+  background: #1a2235;
+  color: #94a3b8;
+  border: 1px solid #2a3550;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  display: inline-block;
+}
+
+.tech-pill:hover {
+  background: #f59e0b18;
+  color: #f59e0b;
+  border-color: #f59e0b40;
 }

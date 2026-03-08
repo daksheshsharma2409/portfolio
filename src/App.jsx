@@ -1,4 +1,4 @@
-import { use, useRef } from "react";
+import { useRef } from "react";
 import HeroPage from "./components/HeroPage";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
@@ -22,7 +22,7 @@ const App = () => {
     }
   };
   return (
-    <div className="bg-[#f9f8f1] font-display">
+    <div className="bg-[#0a0d1a] font-display">
       <Navbar
         scrollToSection={scrollToSection}
         heroRef={heroRef}
