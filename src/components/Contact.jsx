@@ -19,7 +19,7 @@ const socialLinks = [
     handle: "@daksheshsharma2409",
   },
   {
-    href: "https://www.linkedin.com/in/dakshesh-sharma-825378291/",
+    href: "https://www.linkedin.com/in/daksheshsharma2007/",
     icon: <Linkedin size={20} />,
     label: "LinkedIn",
     handle: "Dakshesh Sharma",
