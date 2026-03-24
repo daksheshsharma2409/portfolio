@@ -58,7 +58,7 @@ const Navbar = (props) => {
         <div className="flex items-center gap-1 z-20">
           <div className="hidden sm:flex gap-1 items-center">
             <a
-              href="https://www.linkedin.com/in/dakshesh-sharma-825378291/"
+              href="https://www.linkedin.com/in/daksheshsharma2007/"
               target="_blank"
               rel="noreferrer"
               className="text-[#94a3b8] p-2 rounded-lg transition-all duration-200 hover:text-[#f59e0b] hover:bg-[#f59e0b0c]"
@@ -102,7 +102,7 @@ const Navbar = (props) => {
             <a href="https://github.com/daksheshsharma2409/" target="_blank" rel="noreferrer" className="text-[#94a3b8] hover:text-[#f59e0b] transition-colors">
               <Github size={22} />
             </a>
-            <a href="https://www.linkedin.com/in/dakshesh-sharma-825378291/" target="_blank" rel="noreferrer" className="text-[#94a3b8] hover:text-[#f59e0b] transition-colors">
+            <a href="https://www.linkedin.com/in/daksheshsharma2007/" target="_blank" rel="noreferrer" className="text-[#94a3b8] hover:text-[#f59e0b] transition-colors">
               <Linkedin size={22} />
             </a>
           </div>
